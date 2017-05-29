@@ -15,11 +15,11 @@
     </logger>
 
     <logger name="org.springframework.core">
-        <level value="debug"/>
+        <level value="error"/>
     </logger>
 
     <logger name="org.springframework.beans">
-        <level value="debug"/>
+        <level value="error"/>
     </logger>
 
     <logger name="org.springframework.context">
@@ -37,6 +37,10 @@
     <logger name="org.springframework.security">
         <level value="error"/>
     </logger>
+    
+    <logger name="org.springframework.security">
+        <level value="debug"/>
+    </logger>
 
     <logger name="org.postgresql">
         <level value="info"/>
@@ -48,6 +52,10 @@
 
     <logger name="org.hibernate.type">
         <level value="error"/>
+    </logger>
+
+    <logger name="org.hdiv">
+        <level value="info"/>
     </logger>
 
     <root>

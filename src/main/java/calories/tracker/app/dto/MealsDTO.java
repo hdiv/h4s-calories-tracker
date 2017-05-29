@@ -2,12 +2,14 @@ package calories.tracker.app.dto;
 
 import java.util.List;
 
+import org.hdiv.services.SecureIdContainer;
+
 /**
  *
  * JSON serializable DTO containing data concerning a meal search request.
  *
  */
-public class MealsDTO {
+public class MealsDTO implements SecureIdContainer{
 
     private long currentPage;
     private long totalPages;

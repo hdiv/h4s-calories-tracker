@@ -7,6 +7,7 @@ import calories.tracker.app.model.Meal;
 import calories.tracker.app.model.SearchResult;
 import calories.tracker.app.services.MealService;
 import org.apache.log4j.Logger;
+import org.hdiv.services.TrustAssertion;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.format.annotation.DateTimeFormat;
 import org.springframework.http.HttpStatus;
@@ -112,7 +113,7 @@ public class MealController {
     @ResponseBody
     @ResponseStatus(HttpStatus.OK)
     @RequestMapping(method = RequestMethod.DELETE)
-    public void deleteMeals(@RequestBody List<Long> deletedMealIds) {
+    public void deleteMeals(@RequestBody @TrustAssertion(idFor=MealDTO.class) List<Long> deletedMealIds) {
         mealService.deleteMeals(deletedMealIds);
     }
 

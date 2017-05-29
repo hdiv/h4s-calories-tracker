@@ -13,12 +13,14 @@ import java.util.Date;
 import java.util.List;
 import java.util.stream.Collectors;
 
+import org.hdiv.services.SecureIdentifiable;
+
 /**
  *
  * JSON serializable DTO containing Meal data
  *
  */
-public class MealDTO {
+public class MealDTO implements SecureIdentifiable<Long>{
 
     private Long id;
 
