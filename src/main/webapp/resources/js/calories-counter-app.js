@@ -241,6 +241,7 @@ angular.module('caloriesCounterApp', ['editableTableWidgets', 'frontendServices'
                         }
                     })
                     .map(function (meal) {
+                    	if(meal.id) {
                         return {
                             id: meal.id,
                             date: meal.date,
@@ -249,6 +250,15 @@ angular.module('caloriesCounterApp', ['editableTableWidgets', 'frontendServices'
                             calories: meal.calories,
                             version: meal.version
                         }
+                    } else {
+                    	return {
+                            date: meal.date,
+                            time: meal.time,
+                            description: meal.description,
+                            calories: meal.calories,
+                            version: meal.version
+                        }
+                    }
                     })
                     .value();
             }
