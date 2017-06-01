@@ -17,6 +17,9 @@ angular.module('frontendServices', [])
                         fromTime: prepareTime(fromTime),
                         toTime: prepareTime(toTime),
                         pageNumber: pageNumber
+                    },
+                	headers: {
+                        "X-Requested-With": "XMLHttpRequest"
                     }
                 })
                 .then(function (response) {
@@ -39,7 +42,8 @@ angular.module('frontendServices', [])
                     url: '/meal',
                     data: deletedMealIds,
                     headers: {
-                        "Content-Type": "application/json"
+                        "Content-Type": "application/json",
+                        "X-Requested-With": "XMLHttpRequest"
                     }
                 })
                 .then(function (response) {
@@ -63,7 +67,8 @@ angular.module('frontendServices', [])
                     data: dirtyMeals,
                     headers: {
                         "Content-Type": "application/json",
-                        "Accept": "text/plain, application/json"
+                        "Accept": "text/plain, application/json",
+                        "X-Requested-With": "XMLHttpRequest"
                     }
                 })
                 .then(function (response) {
@@ -84,7 +89,11 @@ angular.module('frontendServices', [])
             getUserInfo: function() {
                 var deferred = $q.defer();
 
-                $http.get('/user')
+                $http.get('/user', {
+                	headers: {
+                        "X-Requested-With": "XMLHttpRequest"
+                    }
+                })
                     .then(function (response) {
                         if (response.status == 200) {
                             deferred.resolve(response.data);
